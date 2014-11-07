@@ -19,7 +19,7 @@
 \title[Avoiding The Top 10 Software Security Design Flaws]{Avoiding The Top 10 Software Security Design Flaws}
 % \subtitle{Chapter 6.1 - 6.2}
 
-\author{Lasse K. Brun \& Håvard Rustad Olsen \\* (Group 5)} % Your name
+\author{Lasse K. Brun \& Haavard Rustad Olsen \\* (Group 5)} % Your name
 \institute[UiB]
 {
 \medskip
@@ -93,7 +93,7 @@
 	\frametitle{2. Use an authentication mechanism that cannot be bypassed or tampered with}
 	\begin{itemize}
 	\item Don't use forgeable session tokens
-	\item Use time-tested mechanisms such as Kerberos %(http://web.mit.edu/kerberos/)
+	\item Use time-tested mechanisms such as Kerberos\cite{kerberos}
 	\item Specify time limit for the session if user is inactive
 	\item Handle passwords properly!
 	\item It's preferable to use on component responsible for authentication
@@ -111,9 +111,49 @@
 \begin{frame}
 
 	\frametitle{4. Strictly separate data and control instructions, and never process control instructions received from untrused sources}
+	\begin{itemize}
+	\item Co-mingling data and control instructions in a single entity can lead to injection vulnerabilities
+	\item General problem in all layers of computer systems
+	\item At Lower levels:
 	
+	\begin{itemize}
+		\item Memory-corruption vulnerabilities
+		\item May cause attacker controlled modification of control flow.
+		\item May cause direct execution of data as machine or bytecode instructions
+	\end{itemize}
+	
+	\end{itemize}
 
 \end{frame}
+\begin{frame}
+	\frametitle{4. Strictly separate data and control instructions, and never process control instructions received from untrused sources}
+	\begin{itemize}
+	\item At Higher levels:
+	\begin{itemize}
+		\item Problems occur in context of runtime interpretation of domain-specific or general-purpose programming languages
+		\item If sw assembles string in a parseable language by combining untrusted data with control instructions.
+	\end{itemize}
+	
+	\item You should consider control-flow integrity and separation of control and data as important design goals!
+	\item What to consider while designing/using APIs! - Class discussion! 
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{4. Strictly separate data and control instructions, and never process control instructions received from untrused sources}
+	\begin{itemize}
+	\item Designing systems which relies on transforming data into code:
+	\begin{itemize}
+		\item Take extra care to validate the data as strictly as possible
+		\item Areas this is concerning is the \textit{\textbf{eval}} function, reflection or query languages.
+	\end{itemize}
+	
+	\end{itemize}
+
+\end{frame}
+
+
 
 \begin{frame}
 
