@@ -116,8 +116,36 @@
 \begin{frame}
 
 	\frametitle{2. Use an authentication mechanism that cannot be bypassed or tampered with}
+	\begin{itemize}
+	\item One goal of secure design: prevent unauthenticated access
+	\item Prevent changing of identity without re-authenticate 
+	\item Authenticating requires one or more factors	
 	
+		\begin{itemize}
+			\item Something you know (Password)
+			\item Something you are (Biometric signature)
+			\item Something you have (Smartphone)
+		\end{itemize}
+		
+	\item Authenticate machines as well as humans	
+	
+	\end{itemize}
+	
+	
+	
+\end{frame}
 
+\begin{frame}
+
+	\frametitle{2. Use an authentication mechanism that cannot be bypassed or tampered with}
+	\begin{itemize}
+	\item Don't use forgeable session tokens
+	\item Use time-tested mechanisms such as Kerberos %(http://web.mit.edu/kerberos/)
+	\item Specify time limit for the session if user is inactive
+	\item Handle passwords properly!
+	\item It's preferable to use on component responsible for authentication
+	\end{itemize}
+	
 \end{frame}
 
 \begin{frame}
