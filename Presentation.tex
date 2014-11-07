@@ -104,7 +104,22 @@
 \begin{frame}
 
 	\frametitle{3. Authorize after you authenticate}
-	
+
+	\begin{itemize}
+		\item Authentication may not be sufficient to deciding whether to disallow or allow the user to perform certain actions.
+		\item Determine what actions users can execute on the system.
+		\item Should be conducted after authentication. 
+		\item Authorization depend upon:
+		\begin{itemize}
+			\item Privileges associated with user.
+			\item Context of the request.
+			\item Time and location of the request.
+		\end{itemize}
+		\item Authorization may need to invoke authentication.
+		\item A common infrastructure should be responsible for authenticating users.
+		
+		
+	\end{itemize}		
 
 \end{frame}
 
@@ -118,6 +133,36 @@
 \begin{frame}
 
 	\frametitle{5. Define an approach that ensures all data are explicitly validated}
+	
+	\begin{itemize}
+		\item Ensure that comprehensive data validation actually takes place.
+		\item All assumptions about data have been validated when they are being used.
+		\item Feasible for security reviewer to efficiently reason about and verify the correctness of data validation.
+		\item This verifiability should take into account that code change.
+	
+	\end{itemize}
+	
+
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{5. Define an approach that ensures all data are explicitly validated}
+	
+	\begin{itemize}
+		\item Design and use centralized validation to ensure that all data entering the system is properly validated. 
+		\begin{itemize}
+			\item Intercept all incoming requests.
+			\item Validate all fields before any processing is done.
+			\item Consuming complex data formats, must such parsers be designed to cope with malicious input.
+
+		\end{itemize}
+
+		\item Transform data to canonical form.
+		\item Use common libraries of validation of primitives. Should be white listing. 
+		\item Use implementation language level types to capture data about data validity. 				
+	
+	\end{itemize}
 	
 
 \end{frame}
