@@ -265,7 +265,7 @@
 \begin{frame}
 
 	\frametitle{6. Use cryptography correctly}
-	
+
 	\begin{itemize}
 		
 		\item One of the most important tools for writing secure software
@@ -376,22 +376,38 @@
 		\item Balance between good user experience and sufficient security
 		\item Consider what system you are creating as well as who will use it
 		\item Recommendation: "Secure by default"
-	
-	\end{itemize}
 
 \end{frame}
 
 \begin{frame}
 
-	\frametitle{8. Always consider the users}
+	\frametitle{9. Understand how integrating external components changes your attack surface}
 	
 	\begin{itemize}
-	
-	\item Alot of work to be done in user-focused security!
-	\item Example problem: "Secure" password requirements.
-	\item More complex: Simple security for normal users, while giving admins the control they require
-	
+		\item Unlikely to develop a system without external components.
+		\item When adding functionality, developers often use existing components or external components.
+		\item External components are not written here.
+		\begin{itemize}
+			\item Off the shelf components, platforms, applications.
+			\item Third party open source.
+			\item Widgets or gadgets added to a web project.
+			\item Web service.
+		\end{itemize}
+		\item Can be included as binaries, libraries, source code or simple API's.
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{9. Understand how integrating external components changes your attack surface}
+	
+	\begin{itemize}
+		\item Functionality should be achieved by reuse, rather than creating something from scratch.
+		\item These have been tested and validated to meet a certain security standard.
+		\item By using rather than building means that the software inherits the security weaknesses.
+		\item This must be solved, mitigated or accounted for.
+	\end{itemize}
+	
 
 \end{frame}
 
@@ -399,6 +415,40 @@
 \begin{frame}
 
 	\frametitle{9. Understand how integrating external components changes your attack surface}
+	
+	\begin{itemize}
+		\item Allocate time in software development methodology to consider security impact.
+		\begin{itemize}
+			\item Change threat model? 
+			\item Add any attack surface?
+			\item Unused features?
+			\item Included components include other components?
+			\item Source known and trusted? 
+			\item Documentation?
+		\end{itemize}		 
+		\item External components should not be trusted until appropriate security controls have been applied.
+	\end{itemize}
+	
+
+\end{frame}
+
+
+\begin{frame}
+
+	\frametitle{9. Understand how integrating external components changes your attack surface}
+	
+	\begin{itemize}
+		\item At the minimum consider the following:
+		\begin{itemize}
+			\item Only enable functionality you intend to use.
+			\item If you can't configure security properties, use another library. 
+			\item Follow sources that track or publish security-related information.
+			\item Maintain an up to date list of all external components.
+			\item Consider all data from external sources tainted  until proven valid.
+			\item Design for flexibility.
+		\end{itemize}
+		
+	\end{itemize}
 	
 
 \end{frame}
