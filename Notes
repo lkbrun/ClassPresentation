@@ -53,4 +53,15 @@
 	- Regualtory revisiting and revising data protection plicies and their design implications is essential. 
 
 9. Understand how integrating external components changes your attack surface
+	- Unlikely to develope new system without external pieces of software.
+	- Adding functionality, developerse often make use of existing components.
+	- External components are "not written here" in the firm
+		- off the shelf components, platforms, applications
+		- Third party open source libraries
+		- Widgets or gadgets added or loaded as part of a web project
+		- Access to some functionality provided by the component that you plan to take advantage of( web service )
+		- Software developed by different team within same organisation. 
+	- These may be included as binaries, libraries, source code or as simple API's
+	- Functionality should be acheived by reuse of tried and true pieces rather than creating from scratch.
+	- Old components have been tested and validated and stand up to the company current secuirty standards.
 	- 
