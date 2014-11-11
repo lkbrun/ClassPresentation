@@ -85,5 +85,4 @@
 		- Maintain an up to date list of all consumed exernal components
 		- Authenticate data flow between system and external components.
 		- Consider all data from external sources as tainted until proven valid.
-		- Design for flexibility. If need of change, or component is to risky to use. Should be easy to change. 
-		-  
+		- Design for flexibility. If need of change, or component is to risky to use. Should be easy to change.  
