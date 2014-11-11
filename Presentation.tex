@@ -117,10 +117,11 @@
 \begin{frame}
 
 	\frametitle{2. Use an authentication mechanism that cannot be bypassed or tampered with}
+	
 	\begin{itemize}
-	\item One goal of secure design: prevent unauthenticated access
-	\item Prevent changing of identity without re-authenticate 
-	\item Authenticating requires one or more factors	
+		\item One goal of secure design: prevent unauthenticated access
+		\item Prevent changing of identity without re-authenticate 
+		\item Authenticating requires one or more factors	
 	
 		\begin{itemize}
 			\item Something you know (Password)
@@ -128,10 +129,9 @@
 			\item Something you have (Smartphone)
 		\end{itemize}
 		
-	\item Authenticate machines as well as humans	
+		\item Authenticate machines as well as humans	
 	
 	\end{itemize}
-	
 	
 	
 \end{frame}
@@ -139,12 +139,13 @@
 \begin{frame}
 
 	\frametitle{2. Use an authentication mechanism that cannot be bypassed or tampered with}
+	
 	\begin{itemize}
-	\item Don't use forgeable session tokens
-	\item Use time-tested mechanisms such as Kerberos %(http://web.mit.edu/kerberos/)
-	\item Specify time limit for the session if user is inactive
-	\item Handle passwords properly!
-	\item It's preferable to use on component responsible for authentication
+		\item Don't use forgeable session tokens
+		\item Use time-tested mechanisms such as Kerberos\cite{kerberos} 
+		\item Specify time limit for the session if user is inactive
+		\item Handle passwords properly!
+		\item It's preferable to use on component responsible for authentication
 	\end{itemize}
 	
 \end{frame}
@@ -174,43 +175,51 @@
 \begin{frame}
 
 	\frametitle{4. Strictly separate data and control instructions, and never process control instructions received from untrused sources}
-	\begin{itemize}
-	\item Co-mingling data and control instructions in a single entity can lead to injection vulnerabilities
-	\item General problem in all layers of computer systems
-	\item At Lower levels:
 	
 	\begin{itemize}
-		\item Memory-corruption vulnerabilities
-		\item May cause attacker controlled modification of control flow.
-		\item May cause direct execution of data as machine or bytecode instructions
-	\end{itemize}
+	
+		\item Co-mingling data and control instructions in a single entity can lead to injection vulnerabilities
+		\item General problem in all layers of computer systems
+		\item At Lower levels:
+	
+		\begin{itemize}
+			\item Memory-corruption vulnerabilities
+			\item May cause attacker controlled modification of control flow.
+			\item May cause direct execution of data as machine or bytecode instructions
+		
+		\end{itemize}
 	
 	\end{itemize}
 
 \end{frame}
 \begin{frame}
 	\frametitle{4. Strictly separate data and control instructions, and never process control instructions received from untrused sources}
-	\begin{itemize}
-	\item At Higher levels:
-	\begin{itemize}
-		\item Problems occur in context of runtime interpretation of domain-specific or general-purpose programming languages
-		\item If sw assembles string in a parseable language by combining untrusted data with control instructions.
-	\end{itemize}
 	
-	\item You should consider control-flow integrity and separation of control and data as important design goals!
-	\item What to consider while designing/using APIs! - Class discussion! 
+	\begin{itemize}
+	
+		\item At Higher levels:
+		\begin{itemize}
+			\item Problems occur in context of runtime interpretation of domain-specific or general-purpose programming languages
+			\item If sw assembles string in a parseable language by combining untrusted data with control instructions.
+		\end{itemize}
+	
+		\item You should consider control-flow integrity and separation of control and data as important design goals!
+		\item What to consider while designing/using APIs! - Class discussion!
+		 
 	\end{itemize}
 
 \end{frame}
 
 \begin{frame}
 	\frametitle{4. Strictly separate data and control instructions, and never process control instructions received from untrused sources}
+	
 	\begin{itemize}
-	\item Designing systems which relies on transforming data into code:
-	\begin{itemize}
-		\item Take extra care to validate the data as strictly as possible
-		\item Areas this is concerning is the \textit{\textbf{eval}} function, reflection or query languages.
-	\end{itemize}
+		\item Designing systems which relies on transforming data into code:
+		\begin{itemize}
+			\item Take extra care to validate the data as strictly as possible
+			\item Areas this is concerning is the \textit{\textbf{eval}} function, reflection or query languages.
+		
+		\end{itemize}
 	
 	\end{itemize}
 
@@ -259,18 +268,18 @@
 	
 	\begin{itemize}
 		
-	\item One of the most important tools for writing secure software
-	\item What cryptography can do:
+		\item One of the most important tools for writing secure software
+		\item What cryptography can do:
 	
-	\begin{itemize}
+		\begin{itemize}
 	
-		\item Ensure confidentiality	
-		\item Protect from unauthorized modification
-		\item Authenticate the source of data
-	\end{itemize}	 
+			\item Ensure confidentiality	
+			\item Protect from unauthorized modification
+			\item Authenticate the source of data
+		\end{itemize}	 
 	
-	\item Extremely hard to get right!
-	\item Long list of pitfalls...	
+		\item Extremely hard to get right!
+		\item Long list of pitfalls...	
 	
 	\end{itemize}
 
@@ -282,11 +291,11 @@
 	
 	\begin{itemize}
 		
-	\item Using your own cryptographic algorithms and implementation
-	\item Misuse of libraries and algorithms
-	\item Poor key management
-	\item Bad randomisation algorithms
-	\item Failure to centralize cryptography
+		\item Using your own cryptographic algorithms and implementation
+		\item Misuse of libraries and algorithms
+		\item Poor key management
+		\item Bad randomisation algorithms
+		\item Failure to centralize cryptography
 	\end{itemize}
 \end{frame}
 
@@ -363,12 +372,10 @@
 	
 	\begin{itemize}
 	
-	\item Security directly linked to the users
-	\item Balance between good user experience and sufficient security
-	\item HER E DET ET GAP .. IKKE HELT VET KA DEALEN E..	
-	
-	\item Consider what system you are creating as well as who will use it
-	\item Recommendation: "Secure by default"
+		\item Security directly linked to the users
+		\item Balance between good user experience and sufficient security
+		\item Consider what system you are creating as well as who will use it
+		\item Recommendation: "Secure by default"
 	
 	\end{itemize}
 
@@ -400,10 +407,62 @@
 
 	\frametitle{10. Be flexible when considering future changes to objects and actors}
 	\begin{itemize}
-		\item Test \cite{sample}
+		\item Security designed for change!
+		\item Example: Change in threats or environment.
+		\item How to keep your system flexible?
 	\end{itemize}
 	
 	
+
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{10. Be flexible when considering future changes to objects and actors}
+	\begin{itemize}
+		\item Design for secure updates
+		\item Design for security properties changing over time
+		\item Design with the ability to toggle functionality
+		\item Design for changes to secret objects
+		\item Design for changes in third-party applications
+		\item Design for changes to entitlements
+	\end{itemize}
+	
+	
+
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{Our opinion on T10SSDF}
+
+	\begin{itemize}
+
+		\item Pros:
+		
+		\begin{itemize}
+			
+			\item A lot of good points
+			\item A lot of interesting and useful information		
+		\end{itemize}				
+				
+		\item Cons:
+		
+		\begin{itemize}
+			
+			\item Hard to read
+			\item Complicates simple problems and points
+			\item Compresses pages of text into a few sentences
+			
+		\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Bad example}
+
+\textit{ `` The challenge to designers and architects lies in creating designs that facilitate secure configuration and use by those interested in doing so, designs that motivate and incentivize secure use among those not particularly interested in software security, and designs that prevent or mitigate abuse from those who intend to weak- en or compromise the system. "}
 
 \end{frame}
 
