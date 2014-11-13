@@ -1,43 +1,59 @@
+Introduction. 
+	- All system -> set of defects
+	- Implementation bugs and design flaws
+	- IEEE Computer society, leading organization for computing professionals
+	- Launched a cybersecurity initiative aiming to expanding and escalating its ongoing involvment in the field of cybersecurity
+	- First step to launch Center for secure design -> shift focus.
+
+1. Earn or Give, but never assume, Trust
+	- Systems consists mulitple component successfylly accomplish their purpose.
+	- Inherently insecure hostile environment. -> desktop computer.
+	- Most common security failures misplaced trust.
+	- Thick clients, web browsers, automobiles, pacemakers, gaming systems, 
+	- Designs place authorization, access control, security policies in client software thinking wont discovered, modified or exposed.
+	- Data sent application considered malicous until proven otherwise. 
+	- Safer in the long run. 
+	- If IP/SD must be client mechanisms cope potential compromise. 
+	- Validate all user input. 
+	- Consider where code executed, where data will go, from where data comes.  
+
 3. Authorize after you authenticate
-	- Important to identify a person, but also to determine what actions this user can execute.
-	- Authenticate may not be sufficient before deciding whether to disallow or allow some functionality of the system.
-	- ATM: User cannot withdraw the whole account, authorized to withdraw a certain limit of cash.
-	- Should be conducted after authenticate. Depends on privileges associated with the user, context of the request, time of the request, and the location of the requesting user.
-	- Quitting job or promotions and user athorization must be changed.
-	- Authorization may lead to authentication -> Say a user looses a device or walks away from it. Then it would be smart to have certain operations reauthenticate
-	- Always authenticate users through back end(common infrastructure).
+	- Identify person, determine actions execute.
+	- Authenticate sufficient deciding allow/disallow funtionality.
+	- ATM User
+	- Depend privelages user and context request. Time and location.
+	- Authorize may invoke authentication
+	- Authenticate safe environment, server, back-end.
 
 5. Define an approach that ensures all data are explicitly validated.
-	- Systems and components often makes assumptions about data they operate on. It is important to explicitly ensure that such assumptions hold: Vulnerabilities frequently arise when implicit assumptions is done about data, which can be exploited by an attacker.
-	- Design software to ensure that comprehensive data validation actually takes place and that all assumpiotns about data has been validated when they are used.
-	- Design software to make it feasble to for a security reviewer to efficiently reason about and verify the correctness of data validation.
-	- Designing for verifiability should take into account that code evolves, resulting in a risk of be vulnerable in a later stage in the development cycle. 
-	- Design and use centralized validation mechanisms to ensure that all data entering a system is properly validated
+	- Systems and components makes assumptions about data they operate on. It is important to explicitly ensure that such assumptions hold: Vulnerabilities frequently arise when implicit assumptions is done about data, which can be exploited by an attacker.
+	- Design software  ensure comprehensive data validation takes place and assumpiotns about data validated when used.
+	- Design software feasble security reviewer efficiently reason verify correctness data validation.
+	- Designing for verifiability code evolves, resulting risk vulnerable later stage development cycle. 
+	- Design and use centralized validation mechanisms ensure all data entering system properly validated
 		- Intercept all incoming requests, and apply basic input validation to all request parameters.
 		- Centrally validate all fields of all received protocol messages before any actual processing takes place.
 		- When consuming complex data formats must such parsers and validators be designed to robustly cope with potentially malicious or malformed inputs.
-	- Transform data into canonical form before validation. 
+	- Canonical form before validation. 
 	- Use common libraries of validation primitives. Email addresses, dates, etc. Should be White listing.
-	- Use implementation language level types to capture assumptions about data validity. string representation of a date to a Date object. Downstream components are then free for checking syntax and can focus on checking pre conditions that are not supportet by the type's contract. 
 	- Various problems arise from failure to address this security design principle
 		- Injection vulnerabilities
 		- XXS 
 		- Attempting to validate data that is not in canonical form can allow validation to be bypassed. 
-		- Non garbage collection language are exposed to memory corruption vulnerabilities such as buffer overflow, etc
+		- Non memory safe language are exposed to memory corruption vulnerabilities such as buffer overflow, etc
 		- Need upperbound on data size of input -> resource exhaustion
-		- 
+	- 
 
 7. Identify sensitive data and how they should be handeled.
-	- First tasks of developers: Identify sensitive data and how to protect it.
+	- First tasks developers: Identify sensitive data and how to protect it.
 	- Over the years have many systems failed to protect.
-	- Reason being either: failed to identify it as sensitive or failed to identify all the ways in which data could be manipulated.
+	- Reason: failed to identify it as sensitive or failed to identify all the ways in which data could be manipulated.
 	- Data sensitivity is context-sensitive:
 		- Regulations
 		- Company policies
 		- constractual obligations
 		- user expectations
-	- Important to factor all relevant considerations into the design of a data sensitivity policy.
-		- Different regulation systems: EU Data Protection Directive differ from the US
+	- Different regulation systems: EU Data Protection Directive differ from the US
 	- Not all data protection requirements are the same:
 		- 1: For some data: confidentiality is critical: financial records and corporate intellectual property
 		- 2: For some data: availability is critical: medial records
@@ -45,8 +61,8 @@
 	- Access control mechanisms and cryptography for 1 and 3
 	- Backups to preserve data availability
 
-	- Data sets do not only exists at rest, but in transit between components within aP single system and between organizations.
-	- Data between systems corssing trust boundaries.
+	- Data sets do not only exists at rest, but in transit between components within a single system and between organizations.
+	- Crossing trust boundaries.
 	- Essential to identify trust boundaries and rectifying them with data protection policies is an essential design activity.
 	- Trust is just as tricky as sensitive data.
 	- Policy requirements and data sensitivity can change over time as business climate evolves, more interconnected systems

@@ -155,18 +155,11 @@
 	\frametitle{3. Authorize after you authenticate}
 
 	\begin{itemize}
-		\item Authentication may not be sufficient to deciding whether to disallow or allow the user to perform certain actions.
 		\item Determine what actions users can execute on the system.
-		\item Should be conducted after authentication. 
-		\item Authorization depend upon:
-		\begin{itemize}
-			\item Privileges associated with user.
-			\item Context of the request.
-			\item Time and location of the request.
-		\end{itemize}
+		\item Authentication may not be sufficient to deciding whether to disallow or allow the user to perform certain actions. 
+		\item Authorization depend upon privileges associated with user and context of the request.
 		\item Authorization may need to invoke authentication.
 		\item A common infrastructure should be responsible for authenticating users.
-		
 		
 	\end{itemize}		
 
@@ -254,8 +247,7 @@
 		\end{itemize}
 
 		\item Transform data to canonical form.
-		\item Use common libraries of validation of primitives. Should be white listing. 
-		\item Use implementation language level types to capture data about data validity. 				
+		\item Use common libraries of validation of primitives. Should be white listing. 			
 	
 	\end{itemize}
 	
@@ -308,7 +300,8 @@
 		\item Data sensitivity is context-sensitive:
 		\begin{itemize}
 			\item Regulations
-			\item Company regulations
+			\item Company policies
+			\item Contractual obligations
 			\item User expectations
 		\end{itemize}
 		\item Crucial to factor all relevant considerations into the design.
@@ -401,7 +394,7 @@
 	\begin{itemize}
 		\item Unlikely to develop a system without external components.
 		\item When adding functionality, developers often use existing components or external components.
-		\item External components are not written here.
+		\item External components are ''not written here".
 		\begin{itemize}
 			\item Off the shelf components, platforms, applications.
 			\item Third party open source.
